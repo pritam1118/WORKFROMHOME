@@ -1,0 +1,50 @@
+@baseUrl = http://localhost:4004/odata/v4/wfh
+
+### 1️⃣ Employee creates WFH request (status = PENDING by default)
+POST {{baseUrl}}/Requests
+Content-Type: application/json
+
+{
+  "employeeId": "E104", 
+  "fromDate": "2026-02-06",
+  "toDate": "2026-02-06",
+  "reason": "Personal work",
+  "email":"pritam123@gmail.com",
+  "description": "WFH for personal reasons"
+}
+
+### 2️⃣ HR approves WFH request
+POST {{baseUrl}}/approve
+Authorization: Basic hradmin:
+Content-Type: application/json
+
+{
+ "employeeId": "E103",
+  "fromDate": "2026-02-06",
+  "toDate": "2026-02-06" 
+}
+
+### 3️⃣ HR rejects WFH request
+POST {{baseUrl}}/reject
+Authorization: Basic hradmin:
+Content-Type: application/json
+
+{
+  "employeeId": "E103", 
+  "fromDate": "2026-02-06",
+  "toDate": "2026-02-06" 
+}
+
+### 4️⃣ Employee cancels own WFH request
+POST {{baseUrl}}/cancel
+Authorization: Basic employee:
+Content-Type: application/json
+
+### 5️⃣ Employee reads own WFH requests
+GET {{baseUrl}}/Requests
+Authorization: Basic employee:
+
+
+{
+  "ID": "E103"
+}

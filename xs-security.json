@@ -1,0 +1,31 @@
+{
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Employee",
+      "description": "Employee"
+    },
+    {
+      "name": "$XSAPPNAME.HR_Admin",
+      "description": "HR_Admin"
+    }
+  ],
+  "attributes": [],
+  "role-templates": [
+    {
+      "name": "Employee",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.Employee"
+      ],
+      "attribute-references": []
+    },
+    {
+      "name": "HR_Admin",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.HR_Admin"
+      ],
+      "attribute-references": []
+    }
+  ]
+}

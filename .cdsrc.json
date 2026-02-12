@@ -1,0 +1,16 @@
+{
+  "auth": {
+    "mocked": {
+      "users": {
+        "employee": {
+          "password": "employee",
+          "roles": ["Employee"]
+        },
+        "hr": {
+          "password": "hr",
+          "roles": ["HR_Admin"]
+        }
+      }
+    }
+  }
+}
